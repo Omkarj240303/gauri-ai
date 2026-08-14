@@ -1,0 +1,13 @@
+venv/
+venv_clean/
+__pycache__/
+*.pyc
+.git/
+.env
+.env.*
+tests/
+frontend/
+.pytest_cache/
+.vscode/
+.idea/
+requirements_old.txt

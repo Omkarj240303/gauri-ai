@@ -1,0 +1,14 @@
+venv/
+venv_clean/
+__pycache__/
+*.pyc
+.git/
+.env
+.env.*
+!.env.example
+tests/
+.pytest_cache/
+.vscode/
+.idea/
+requirements_old.txt
+storage/

@@ -1,0 +1,454 @@
+GAURI TECHNOLOGY STACK AND INTEGRATION ARCHITECTURE
+===================================================
+
+CORE PLATFORMS AND ECOSYSTEMS
+=============================
+
+SALESFORCE ECOSYSTEM
+Platform Tier:
+  - Salesforce Lightning Experience (no Classic)
+  - Sales Cloud (opportunity, account, lead management)
+  - Service Cloud (case, knowledge, community)
+  - Field Service Lightning (mobile workforce)
+  - Commerce Cloud (e-commerce, if applicable)
+
+Salesforce AI Components:
+  - Einstein: Predictive and generative AI (scoring, insights, recommendations)
+  - Agentforce: Autonomous AI agents for process automation
+  - Einstein Analytics: Embedded analytics and reporting
+
+Salesforce Integration:
+  - Salesforce Connect: External object integration with SAP/data platforms
+  - Slack integration: Notifications and workflows
+  - Tableau CRM: Advanced analytics and dashboards
+  - MuleSoft: API-based integrations (Salesforce's iPaaS platform)
+
+Security and Governance:
+  - Role-based access control
+  - Field-level security and encryption
+  - Data loss prevention
+  - Audit logging and compliance
+
+---
+
+SAP ERP ECOSYSTEM
+SAP Business One:
+  - Integrated ERP for mid-market (finance, sales, purchasing, inventory)
+  - On-premise or cloud deployment
+  - SQLServer or HANA database backend
+  - Designed for 500-5000 user organisations
+
+SAP S/4HANA Cloud:
+  - Modern cloud ERP for enterprise customers
+  - In-memory HANA database for real-time analytics
+  - Simplified data model vs. legacy ECC
+  - Regular quarterly updates (vs. annual updates)
+
+SAP Business Technology Platform (BTP):
+  - Cloud-native platform for extensions and integrations
+  - Cloud Functions (serverless compute)
+  - Intelligent Services (ML/AI capabilities)
+  - Integration Suite (API management, EIP)
+  - Data Warehouse Cloud (analytics)
+  - Low-Code application platform
+
+SAP Business AI:
+  - Embedded copilots in S/4HANA Cloud
+  - Process guidance and next-best-action recommendations
+  - Generative AI for document processing
+
+Security and Governance:
+  - User-based licensing
+  - Role-based authorisation
+  - Field-level security
+  - Master data governance (MDG)
+  - Audit trail and compliance
+
+---
+
+DATA PLATFORMS AND CLOUD INFRASTRUCTURE
+========================================
+
+LAKEHOUSE ARCHITECTURE PLATFORMS
+
+Snowflake:
+  - Cloud-agnostic data warehouse
+  - Native support for structured and semi-structured data (JSON, Parquet)
+  - Mature ecosystem and integrations
+  - Scalable and cost-effective storage
+  - Native connectors for SAP, Salesforce
+  - Data sharing capabilities for partner organisations
+
+Databricks:
+  - Data and AI platform built on Delta Lake
+  - Apache Spark native
+  - Strong ML and AI integration
+  - SQL and Python notebooks
+  - Managed workflows and jobs
+  - Unified analytics and ML platform
+
+Hyperscaler Native Solutions:
+  - Azure Synapse: Microsoft's integrated analytics platform
+  - Google BigQuery: Managed data warehouse on GCP
+  - AWS Redshift Spectrum: AWS data warehouse with data lake access
+  - Selection based on existing cloud commitment
+
+---
+
+ETL/INTEGRATION TOOLING
+========================
+
+Talend:
+  - ETL/ELT platform with 900+ pre-built connectors
+  - SAP and Salesforce native connectors
+  - Visual design environment and code generation
+  - Batch and real-time data integration
+  - Data quality and profiling
+  - Typical Gauri use case: SAP and Salesforce data synchronisation
+
+MuleSoft (Salesforce iPaaS):
+  - API-based integration platform as a service
+  - Real-time data synchronisation
+  - Workflow orchestration
+  - Pre-built connectors for enterprise systems
+  - API management and versioning
+  - Typical use case: Salesforce-SAP real-time order-to-cash
+
+SAP Integration Suite:
+  - Native SAP integration platform
+  - API Management
+  - Enterprise Integration Patterns
+  - Pre-built integration content packs
+  - Cloud Functions for custom logic
+  - Typical use case: SAP-to-SAP and SAP-to-cloud integrations
+
+dbt (Data Build Tool):
+  - SQL-based data transformation tool
+  - Version-controlled transformations
+  - Automated testing and documentation
+  - Works with Snowflake, Databricks, BigQuery, etc.
+  - Enables analytics engineering best practices
+  - Typical use case: Semantic layer and dimensional modeling
+
+---
+
+ANALYTICS AND BUSINESS INTELLIGENCE TOOLS
+===========================================
+
+SEARCH-DRIVEN ANALYTICS
+ThoughtSpot:
+  - AI-powered search analytics
+  - Users ask questions in natural language
+  - Self-service analytics without pre-built dashboards
+  - Real-time insights
+  - Typical Gauri use case: Supply chain and production visibility (Roper Rhodes)
+
+TRADITIONAL BI PLATFORMS
+Tableau:
+  - Interactive dashboards and visual analytics
+  - Rich ecosystem and extensions
+  - Strong data connections and federation
+  - Collaborative analytics
+  - Typical Gauri deployment: Executive and operational dashboards
+
+Looker:
+  - BI platform with semantic layer
+  - Embedded analytics in applications
+  - Governed metrics and dimensions
+  - Native GCP integration
+  - Typical use case: Self-service analytics with governance
+
+Microsoft Power BI:
+  - Azure-native analytics platform
+  - Integration with Microsoft ecosystem
+  - Power Query for data preparation
+  - Dashboards and reports
+  - Typical use case: Azure-committed organisations
+
+CUSTOM DASHBOARDS
+Built on cloud data platforms (Snowflake, Databricks, BigQuery) using:
+  - Metabase: Open-source BI platform
+  - Superset: Open-source analytics and data visualisation
+  - Streamlit: Python-based dashboard framework
+  - Grafana: Monitoring and observability platform
+
+---
+
+DOCUMENT INTELLIGENCE AND AUTOMATION
+====================================
+
+SETU-AI (Gauri Product):
+Technology Foundation:
+  - Large Language Models (LLM) for document understanding
+  - Optical Character Recognition (OCR) for scanned documents
+  - Entity extraction and validation
+  - Confidence scoring for extracted values
+
+Supported Document Types:
+  - Invoices (supplier, customer, expense)
+  - Purchase orders and receipts
+  - Contracts and agreements
+  - Forms and applications
+  - Delivery notes and shipping documents
+  - Loan documents and financial statements
+
+Integration Points:
+  - SAP Business One (invoice import, PO matching)
+  - SAP S/4HANA (accounts payable automation)
+  - Salesforce (lead and opportunity data capture)
+  - Data platforms (structured data pipeline)
+
+---
+
+CLOUD INFRASTRUCTURE AND HOSTING
+=================================
+
+MAJOR CLOUD PROVIDERS USED BY GAURI CLIENTS
+
+Amazon Web Services (AWS):
+  - Compute: EC2, Lambda, ECS
+  - Storage: S3, EBS
+  - Database: RDS, DynamoDB
+  - Analytics: Redshift, Athena
+  - Data: AWS Glue, Lake Formation
+  - Typical Gauri clients: AWS-committed enterprises
+
+Microsoft Azure:
+  - Compute: Virtual Machines, Functions, Container Instances
+  - Storage: Blob Storage, Data Lake Storage
+  - Database: Azure SQL, CosmosDB
+  - Analytics: Synapse, Power BI
+  - AI/ML: Cognitive Services, Machine Learning Studio
+  - Typical Gauri clients: Microsoft-committed enterprises
+
+Google Cloud Platform (GCP):
+  - Compute: Compute Engine, Cloud Functions, Cloud Run
+  - Storage: Cloud Storage, Firestore
+  - Database: Cloud SQL, BigQuery, Datastore
+  - Analytics: BigQuery, Looker
+  - AI/ML: Vertex AI, TensorFlow
+  - Typical Gauri clients: Data-forward organisations valuing BigQuery
+
+CLOUD DEPLOYMENT PATTERNS
+Salesforce Cloud:
+  - Multi-tenant cloud service (no infrastructure management)
+  - Salesforce-managed updates and security
+  - High availability and disaster recovery managed by Salesforce
+
+SAP Cloud (S/4HANA Cloud, BTP):
+  - Multi-tenant cloud (no infrastructure management)
+  - SAP-managed updates and security
+  - Managed backup and disaster recovery
+
+Data Platforms:
+  - Snowflake SaaS (multi-cloud, no infrastructure)
+  - Databricks managed service (AWS, Azure, GCP)
+  - Hyperscaler managed services (Azure Synapse, BigQuery, Redshift)
+  - Client infrastructure choice based on strategy
+
+---
+
+SECURITY AND COMPLIANCE TECHNOLOGIES
+====================================
+
+DATA PROTECTION
+Encryption at Rest: AES-256 encryption for data stored in cloud
+Encryption in Transit: TLS 1.2+ for all network communication
+Field-Level Encryption: Additional encryption for PII and sensitive data
+Key Management: Customer-managed or service-managed encryption keys
+
+IDENTITY AND ACCESS
+OAuth 2.0: Standard authentication protocol
+SAML 2.0: Single sign-on integration with client directories
+Multi-Factor Authentication: Optional MFA for sensitive systems
+RBAC: Role-based access control
+ABAC: Attribute-based access control for row and column-level security
+
+AUDIT AND COMPLIANCE
+Audit Logging: All data access and modifications logged
+Compliance Frameworks: Support for GDPR, HIPAA, SOC 2, ISO 27001
+Data Retention: Configurable retention and deletion policies
+Anonymisation: Data anonymisation capabilities for test environments
+
+---
+
+INTEGRATION ARCHITECTURE PATTERNS
+==================================
+
+SYNCHRONOUS REAL-TIME INTEGRATION
+Use Cases: Immediate data availability needed (customer master, inventory)
+Technologies: MuleSoft, SAP Integration Suite, webhooks
+Characteristics:
+  - Request-response pattern
+  - Immediate consistency
+  - Tight coupling between systems
+  - Higher latency tolerance risk
+Example: Salesforce quote referencing real-time SAP pricing
+
+ASYNCHRONOUS BATCH INTEGRATION
+Use Cases: High-volume data movement, non-critical timing
+Technologies: Talend, dbt, cloud data transfer services
+Characteristics:
+  - Fire-and-forget messaging
+  - Eventual consistency
+  - Loose coupling between systems
+  - Better resilience to system outages
+Example: Daily SAP general ledger posting to data warehouse for next-day reporting
+
+EVENT-DRIVEN INTEGRATION
+Use Cases: Reactive processing of system events
+Technologies: Kafka, cloud event services, cloud functions
+Characteristics:
+  - Event publication and subscription
+  - Decoupled components
+  - Scalable and responsive
+Example: Salesforce opportunity close event triggering SAP revenue recognition
+
+API-FIRST INTEGRATION
+Philosophy: Building APIs as first-class integration surface
+Implementation: SAP BTP Cloud Functions, Salesforce REST APIs, MuleSoft
+Benefits: Standardised, versioned, documented integration contracts
+Consistency: Ensures all integrations follow same patterns and security
+
+---
+
+MONITORING AND OBSERVABILITY
+=============================
+
+APPLICATION PERFORMANCE MONITORING (APM)
+Datadog: Multi-cloud monitoring and APM
+New Relic: Application performance monitoring
+Dynatrace: Intelligent monitoring and analytics
+CloudWatch: AWS-native monitoring
+Azure Monitor: Microsoft-native monitoring
+
+LOGGING AND LOG AGGREGATION
+ELK Stack: Elasticsearch, Logstash, Kibana
+Splunk: Enterprise logging and analysis
+CloudWatch Logs: AWS native logging
+Azure Monitor Logs: Microsoft native logging
+Stackdriver: Google Cloud logging and monitoring
+
+ALERTING AND INCIDENT MANAGEMENT
+PagerDuty: Incident response and on-call management
+Opsgenie: Alert and on-call management
+Snyk: Security vulnerability monitoring
+Typical Gauri setup: System health alerts → PagerDuty → on-call engineer
+
+---
+
+DEVELOPMENT AND DEPLOYMENT TECHNOLOGIES
+========================================
+
+VERSION CONTROL
+Git: Distributed version control system
+GitHub, GitLab, Bitbucket: Hosting and collaboration platforms
+Branching Strategy: Trunk-based development with short-lived branches
+
+CI/CD PIPELINES
+Jenkins: Self-hosted CI/CD orchestration
+GitHub Actions: GitHub-native CI/CD
+GitLab CI: GitLab-native CI/CD
+Azure DevOps: Microsoft's CI/CD platform
+Typical stages: Build → Lint → Unit Tests → Security Scan → Deploy to Staging → Manual approval → Deploy to Production
+
+INFRASTRUCTURE AS CODE
+Terraform: Infrastructure as code provisioning
+CloudFormation: AWS-native IaC
+Bicep: Azure-native IaC
+Ansible: Configuration management
+Benefits: Reproducible, version-controlled, testable infrastructure
+
+CONTAINER ORCHESTRATION
+Docker: Containerisation
+Kubernetes: Container orchestration
+Cloud-native services: AWS ECS, Azure Container Instances, GCP Cloud Run
+Typical Gauri use: Containerised integrations, data pipelines, APIs
+
+---
+
+DEVELOPMENT FRAMEWORKS AND LANGUAGES
+====================================
+
+BACKEND DEVELOPMENT
+Python: Primary data engineering and ML language
+  - FastAPI: REST API framework
+  - Django: Web framework
+  - Flask: Lightweight web framework
+  - Pandas: Data manipulation
+  - NumPy: Numerical computing
+  - scikit-learn: Machine learning
+  - PySpark: Distributed computing
+
+JavaScript/TypeScript: Web and integration development
+  - Node.js: Server-side JavaScript
+  - Express: Web framework
+  - TypeScript: Typed JavaScript
+  - Nest.js: Full-stack framework
+
+Java: Enterprise integrations
+  - Spring Boot: Application framework
+  - Maven: Dependency management
+  - JUnit: Testing framework
+
+FRONTEND DEVELOPMENT
+React: UI library for dashboards and portals
+Vue.js: Progressive framework
+Angular: Full-featured framework
+Tailwind CSS: Utility-first CSS framework
+Typical use: Custom dashboards, client portals, admin interfaces
+
+---
+
+TESTING TECHNOLOGIES
+====================
+
+UNIT TESTING
+Jest: JavaScript testing
+pytest: Python testing
+JUnit: Java testing
+Mocha/Chai: Node.js testing
+
+INTEGRATION TESTING
+Postman: API testing and automation
+REST Assured: Java REST API testing
+Behave: BDD testing in Python
+Selenium: Web application testing
+Typical pattern: Test against sandbox environments, never production
+
+PERFORMANCE TESTING
+JMeter: Load and stress testing
+Locust: Load testing in Python
+Gatling: Performance testing tool
+k6: Modern load testing platform
+Typical use: Load testing critical integrations before production
+
+---
+
+TECHNOLOGY SELECTION CRITERIA
+=============================
+
+CLIENT EXISTING INVESTMENTS
+Factor: Existing cloud commitments, current tooling, team expertise
+Logic: Leverage existing infrastructure and skills to reduce learning curve and cost
+Example: AWS-committed client benefits from Redshift/Athena for data platform
+
+Scalability Requirements
+Factor: Data volume, user count, transaction volume
+Selection: Platform capable of growing with business without rearchitecting
+Example: Databricks for ML-heavy workloads; Snowflake for structured analytics
+
+Performance Needs
+Factor: Real-time vs. batch requirements, latency tolerances
+Selection: Real-time needs drive synchronous integration; batch needs enable cost-effective async
+Example: Salesforce-SAP: real-time for order, batch for financial GL
+
+Team Expertise
+Factor: Existing skills and team comfort with technologies
+Logic: Prefer platforms team knows over learning curve
+Example: Python team → Databricks/dbt; C# team → Azure stack
+
+Total Cost of Ownership
+Factor: Licensing, infrastructure, training, ongoing support
+Calculation: Multi-year cost comparison including people
+Example: Snowflake may be lower TCO than on-premise data warehouse with team overhead

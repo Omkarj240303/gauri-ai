@@ -1,0 +1,437 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background: #f7f8fc;
+}
+
+.sidebar {
+  width: 260px;
+  background: #101827;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 28px;
+}
+
+.brand-logo,
+.welcome-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  color: #101827;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.brand h2 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  font-size: 11px;
+  color: #9ca8bb;
+}
+
+.new-chat {
+  width: 100%;
+  border: 1px solid #344055;
+  background: #1b2638;
+  color: white;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.new-chat:hover {
+  background: #243149;
+}
+
+.new-chat span {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.sidebar-section {
+  margin: 32px 8px;
+  color: #9ca8bb;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.sidebar-section span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.sidebar-section p {
+  margin-top: 10px;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  border-top: 1px solid #293548;
+  padding: 18px 8px 4px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sidebar-bottom strong,
+.sidebar-bottom small {
+  display: block;
+}
+
+.sidebar-bottom strong {
+  font-size: 13px;
+}
+
+.sidebar-bottom small {
+  color: #8491a6;
+  margin-top: 3px;
+}
+
+.status-dot,
+.online span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #26c281;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 76px;
+  background: white;
+  border-bottom: 1px solid #e5e8ef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.topbar span {
+  color: #7b8495;
+  font-size: 12px;
+}
+
+.online {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4d596d;
+  font-size: 12px;
+}
+
+.chat {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.welcome {
+  max-width: 850px;
+  margin: auto;
+  padding: 90px 25px;
+  text-align: center;
+}
+
+.welcome-icon {
+  margin: auto;
+  background: #101827;
+  color: white;
+}
+
+.welcome h2 {
+  margin: 22px 0 8px;
+  font-size: 30px;
+}
+
+.welcome p {
+  max-width: 600px;
+  margin: auto;
+  color: #687386;
+  line-height: 1.6;
+}
+
+.suggestions {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.suggestions button {
+  text-align: left;
+  padding: 16px;
+  border: 1px solid #e0e4eb;
+  border-radius: 12px;
+  background: white;
+  color: #364052;
+  cursor: pointer;
+}
+
+.suggestions button:hover {
+  border-color: #aab3c2;
+  transform: translateY(-1px);
+}
+
+.messages {
+  max-width: 900px;
+  margin: auto;
+  padding: 35px 25px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #101827;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.user .avatar {
+  background: #e7ebf2;
+  color: #364052;
+}
+
+.message-content {
+  max-width: 75%;
+}
+
+.user .message-content {
+  text-align: right;
+}
+
+.message-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6c7688;
+  margin-bottom: 6px;
+}
+
+.bubble {
+  background: white;
+  border: 1px solid #e1e5ec;
+  padding: 15px 18px;
+  border-radius: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.user .bubble {
+  background: #101827;
+  color: white;
+  border: none;
+}
+
+.grounding {
+  margin-top: 8px;
+  color: #21865a;
+  font-size: 11px;
+}
+
+.grounding span {
+  margin-right: 5px;
+}
+
+.sources {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #e3e6ec;
+  border-radius: 10px;
+  background: #fafbfc;
+  text-align: left;
+}
+
+.sources-title {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #596476;
+}
+
+.source {
+  font-size: 11px;
+  color: #7a8495;
+  padding: 4px 0;
+}
+
+.source span {
+  margin-right: 6px;
+}
+
+.composer {
+  background: #f7f8fc;
+  padding: 15px 25px 20px;
+}
+
+.composer-box {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  padding: 8px;
+  background: white;
+  border: 1px solid #dce1e8;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(20, 30, 50, 0.05);
+}
+
+textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 10px;
+  min-height: 42px;
+  max-height: 120px;
+  color: #172033;
+  background: transparent;
+}
+
+.send {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  background: #101827;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.send:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.composer p {
+  text-align: center;
+  color: #9aa2b0;
+  font-size: 10px;
+  margin: 8px 0 0;
+}
+
+.typing {
+  display: flex;
+  gap: 5px;
+  width: 65px;
+}
+
+.typing span {
+  width: 6px;
+  height: 6px;
+  background: #9aa2b0;
+  border-radius: 50%;
+  animation: blink 1.2s infinite;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: .3s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: .3;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+
+  .topbar {
+    padding: 0 18px;
+  }
+
+  .welcome {
+    padding-top: 60px;
+  }
+
+  .welcome h2 {
+    font-size: 24px;
+  }
+
+  .suggestions {
+    grid-template-columns: 1fr;
+  }
+
+  .messages {
+    padding: 25px 15px;
+  }
+
+  .message-content {
+    max-width: 85%;
+  }
+
+  .composer {
+    padding: 10px 12px 15px;
+  }
+}
